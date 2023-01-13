@@ -9,6 +9,7 @@ import tempfile
 import boto3
 import numpy as np
 import pandas as pd
+from datetime import datetime as dt
 
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
@@ -54,7 +55,7 @@ def merge_two_dicts(x, y):
 
 
 if __name__ == "__main__":
-    logger.debug("Starting preprocessing.")
+    logger.debug(f"Starting preprocessing: {dt.now()}")
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-data", type=str, required=True)
     args = parser.parse_args()
